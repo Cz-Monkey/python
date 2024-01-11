@@ -11,11 +11,12 @@ def print_todos():
 
 def add_todo():
     # 함수 안에서 함수 밖에 있는 변수를 사용하려면 global 변수이름
-    global tno
-    title = input('할일 입력 : ')
+    global tno4
+    title = input('할일 입력 : ')ㅍ ㅠ퓿
     todos.append({'tno':tno, 'title':title, 'finish':False})
     tno = tno+1
 
+# 숫자를 입력받아 리스트에서 tno을 찾아 finish를 True로 바꿔라....
 def toggle_finish():
     input_todo = int(input('숫자 입력 :'))
     for todo in todos:
