@@ -4,14 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        .gray{color: gray;}
-        .green{color: green;}
-        .blue{color: blue;}
-        .purple{color: purple;}
-    </style>
 </head>
 <body>
-    <p class="{{style}}">{{season}}입니다</p>
+    <form action="/write" method="post">
+        <input type="text" name="title">
+        <button>작성하기</button>
+    </form>
 </body>
 </html>
