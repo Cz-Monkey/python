@@ -6,12 +6,17 @@ gno = 1
 def findall()->list:
     return gb
 
-def save(title:str, writer:str, ingi:str, content:str)->bool:
+def findone(gno:int):
+    for lb in gb:
+        if lb['gno']==gno:
+            lb['ingi']=lb['ingi']+1
+            return lb
+    
+def save(title:str, writer:str,content:str)->bool:
     global gno
     writeday = d.datetime.now().date()
-    lb = dict(gno=gno, title=title, writer=writer, writeday=writeday, 
-              ingi=ingi, content=content)
-    list.append(lb)
+    lb = dict(gno=gno, title=title, writer=writer, writeday=writeday, content=content)
+    gb.append(lb)
     gno+=1
     return True
 

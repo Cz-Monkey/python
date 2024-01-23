@@ -24,19 +24,26 @@
         <tbody>
             {% for lb in list %}
             <tr>
-                <td>{{gb.gno}}</td>
-                <td>{{gb.writer}}</td>
-                <td>{{gb.title}}</td>
-                <td>{{content}}</td>
-                <td>{{gb.writeday}}</td>
-                <td>{{gb.ingi}}</td>
+                <td>{{lb.gno}}</td>
+                <td>{{lb.writer}}</td>
+                <td><a class=nav href="/read?gno={{lb.gno}}">{{lb.title}}</a></td>
+                <td>{{lb.content}}</td>
+                <td>{{lb.writeday}}</td>
+                <td>{{lb.ingi}}</td>
                 <td>
+                    <form action="/read">
+                        <button type="submit" class="btn btn-primary"><a href="/read?gno={{lb.gno}}" style='text-decoration: none; color: white;'>보기</a></button>
+                    </form>
                     <form action="/delete" method="post">
-                        <button type="button" class="btn btn-danger">Danger</button>
-                    </forxm>
+                        <input type="hidden" name="gno" value="{{lb.gno}}">
+                        <button type="submit" class="btn btn-danger">삭제</button>
+                    </form>
                 </td>
             </tr>
             {% endfor %}
+            <form action="/write">
+                <button type="submit" class="btn btn-outline-primary">작성</button>
+            </form>
         </tbody>
     </table>
 </body>
