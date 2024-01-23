@@ -27,6 +27,6 @@ def update():
     gno = request.form.get('gno', type=int)
     content = request.form.get('content',type=str)
     m.update(gno=gno, content=content)
-    return redirect('/', gno=gno, content=content)
+    return redirect('/')
 
 app.run(debug=True)
